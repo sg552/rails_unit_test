@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<%
+#    raise "我报错了！"
+
+   100 /  0
+%>
+<h1>Books</h1>
+<%= form_tag '', method: :get do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag %>
+<% end %>
+
+<div id="books">
+  <% @books.each do |book| %>
+    <%= render book %>
+    <p>
+      <%= link_to "Show this book", book %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New book", new_book_path %>
